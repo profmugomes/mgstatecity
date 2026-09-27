@@ -1,9 +1,5 @@
 # cache
 cache/
 
-# composer
-vendor/
-composer.lock
-
 # test
-index.php
+test/
