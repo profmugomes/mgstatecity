@@ -22,7 +22,7 @@ Obtém os estados e cidades via API do IBGE.
 
 ## License
 
-Copyright (c) 2025-2026 Murilo Gomes <profmugomes.com.br>. All Rights Reserved.
+Copyright (c) 2026 Murilo Gomes <profmugomes.com.br>. All Rights Reserved.
 
 This project is licensed under the PolyForm Perimeter License 1.0.1.
 
