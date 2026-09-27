@@ -1,23 +1,30 @@
 <?php
-// Copyright (C) 2026 Murilo Gomes Julio
-// SPDX-License-Identifier: LGPL-2.1-only
+// Copyright (c) 2026 Murilo Gomes <profmugomes.com.br>. All Rights Reserved. (https://profmugomes.com.br)
 
-// Site: https://mugomes.github.io
+// Licensed under the PolyForm Perimeter License 1.0.1.
+// See LICENSE.md for details.
+
+declare(strict_types=1);
 
 namespace MGStateCity;
 
 class MGStateCity
 {
     private string $cacheDir = '';
-    private int $cacheTTL = 86400; // 24h
+    private int $cacheTTL = 604800; // 7 dias
 
-    public function setCacheDir(string $path, int $permission = 0777)
+    public function setCacheDir(string $path, int $permission = 0777): void
     {
         if (!is_dir($path)) {
             mkdir($path, $permission, true);
         }
 
         $this->cacheDir = $path;
+    }
+
+    public function setCacheTTL(int $value): void
+    {
+        $this->cacheTTL = $value;
     }
 
     private function getCache(string $key, int $ttl): ?array
@@ -36,7 +43,7 @@ class MGStateCity
         return json_decode(file_get_contents($file), true);
     }
 
-    private function setCache(string $key, array $data)
+    private function setCache(string $key, array $data): void
     {
         if (empty($this->cacheDir)) {
             $this->setCacheDir(dirname(__FILE__, 2) . '/cache', 0755);
@@ -128,7 +135,7 @@ class MGStateCity
 
         $coordsURL = sprintf('https://servicodados.ibge.gov.br/api/v3/malhas/municipios/%d/metadados', $municipioID);
 
-        list($coordsData, $erro) = $this->getHTTPJSON($coordsURL, 604800); // 7 dias
+        list($coordsData, $erro) = $this->getHTTPJSON($coordsURL);
         if ($erro) return [null, null, $erro];
 
         if (empty($coordsData)) {
