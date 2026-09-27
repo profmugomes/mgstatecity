@@ -1,17 +1,20 @@
 {
-    "name": "mugomes/mgstatecity",
-    "version": "1.0.0",
+    "name": "profmugomes/mgstatecity",
+    "version": "2.0.0",
+    "description": "Obtém os estados e cidades via API do IBGE.",
+    "type": "library",
     "authors": [
         {
-            "name": "Murilo Gomes Julio",
-            "email": "mugomesoficial@gmail.com"
+            "name": "Murilo Gomes",
+            "email": "profmugomes@gmail.com",
+            "homepage": "https://www.profmugomes.com.br"
         }
     ],
-    "homepage": "https://mugomes.github.io",
+    "license": "proprietary",
     "_comment": [
-        "Copyright (C) 2026 Murilo Gomes Julio"
+        "PolyForm Perimeter License 1.0.1",
+        "Copyright (C) 2025-2026 Murilo Gomes <profmugomes.com.br>. All Rights Reserved."
     ],
-    "license": "LGPL-2.1.only",
     "autoload": {
         "psr-4": {
             "MGStateCity\\": "src/"
